@@ -1,0 +1,25 @@
+<br />
+<h1 class="mw5 center">USUARIOS_EQUIPO</h1>
+<div class="mw4 center" *ngIf="bandera===false">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Cargando...</span>
+  </div>
+</div>
+<div  class="mw5 center" *ngIf="equipos_usuario.length===0">NO HAY REGISTROS</div>
+<div *ngIf="bandera">
+ 
+  <main class="mw6 center" *ngFor="let equipo_usuario of equipos_usuario;let i =index">
+    <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
+      <div class="dtc w2 w3-ns v-mid">
+        <img
+          src="https://robohash.org/{{i}}"
+          class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"
+        />
+      </div>
+      <div class="dtc v-mid pl3">
+        <h1 class="f6 f5-ns fw6 lh-title black mv0">{{equipo_usuario.nombre}}</h1>
+        <h2 class="f6 fw4 mt0 mb0 black-60">Equipo:{{equipo_usuario.catalogo_equipo.nombre}}</h2>
+      </div>
+    </article>
+  </main>
+</div>

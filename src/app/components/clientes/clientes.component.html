@@ -1,0 +1,65 @@
+<h1 class="mw8 center">Clientes</h1>
+
+<!-- Example single danger button -->
+<div class="mw8 center">
+  <div class="btn-group m-1">
+    <button
+      type="button"
+      class="btn btn-danger dropdown-toggle"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      {{ seleccionEquipos }}
+    </button>
+    <div class="dropdown-menu">
+      <a
+        *ngFor="let equipo of equipos"
+        class="dropdown-item"
+        (click)="escogerEquipo(equipo)"
+        >{{ equipo.nombre }}</a
+      >
+    </div>
+  </div>
+  <div class="btn-group">
+    <button
+      type="button"
+      class="btn btn-info dropdown-toggle"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      {{ seleccionUsuarios }}
+    </button>
+    <div class="dropdown-menu">
+      <a
+        *ngFor="let usuario of usuarios"
+        class="dropdown-item"
+        (click)="escogerUsuario(usuario)"
+        >{{ usuario.nombre }}</a
+      >
+    </div>
+  </div>
+</div>
+<br />
+<div class="container">
+  <main class="mw8 " *ngFor="let cliente of clientes; let i = index">
+    <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
+      <div class="dtc w2 w3-ns v-mid">
+        <img
+          src="https://robohash.org/{{ i }}"
+          class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"
+        />
+      </div>
+      <div class="dtc v-mid pl3">
+        <h1 class="f6 f5-ns fw6 lh-title black mv0">
+          Nombre:{{ cliente.catalogo_usuario.nombre }}
+        </h1>
+        <h2 class="f6 fw4 mt0 mb0 black-100">Correo:{{ cliente.email }}</h2>
+        <h3 class="f6 fw4 mt0 mb0 black-60">
+          Equipo:{{ cliente.catalogo_usuario.catalogo_equipo.nombre }}
+        </h3>
+      </div>
+    </article>
+  </main>
+</div>
