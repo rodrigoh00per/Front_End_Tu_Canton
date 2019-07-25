@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class TucantonService {
-  private url = "https://tucantonbackend.herokuapp.com/api/";
+  private url = "http://localhost:3000/api/";
 
   constructor(private _http: HttpClient) {}
 
